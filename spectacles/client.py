@@ -678,7 +678,7 @@ class LookerClient:
             params["fields"] = fields
 
         url = utils.compose_url(self.api_url, path=["lookml_models"], params=params)
-        response = await self.get(url=url, timeout=TIMEOUT_SEC)
+        response = await self.get(url=url, timeout=15)
         try:
             response.raise_for_status()
         except httpx.HTTPStatusError as error:
